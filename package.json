@@ -1,8 +1,8 @@
 {
   "name": "@e2agency/ea-fluid-adaptability",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
-  "main": "src/scss/",
+  "main": "src/scss/index.scss",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/egorovagency/ea-fluid-adaptability.git"
