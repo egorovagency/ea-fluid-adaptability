@@ -1,0 +1,65 @@
+@function ea-unit($value) {
+  @return ($value + 0px) / 1px;
+}
+
+@function ea-rem($size, $base-size: $ea-base-size) {
+  @return ea-unit($size) / ea-unit($base-size) + 0rem;
+}
+
+@function ea-rem-max(
+  $size,
+  $base-size: $ea-base-size,
+  $min-size: $ea-min-size
+) {
+  @return unquote("max(#{ea-rem($size, $base-size)}, #{ea-unit($min-size)}px)");
+}
+
+@function ea-rel($size, $base-size-variable: "--ea-font-size") {
+  @return unquote(
+    "calc(#{ea-unit($size)} * var(#{$base-size-variable}, #{$ea-base-size}) / #{ea-unit($ea-base-size)})"
+  );
+}
+
+@function ea-rel-max(
+  $size,
+  $base-size-variable: "--ea-font-size",
+  $min-size: $ea-min-size
+) {
+  @return unquote(
+    "max(#{ea-rel($size, $base-size-variable)}, #{ea-unit($min-size)}px)"
+  );
+}
+
+@function ea-view-units($axis) {
+  @if $axis == "x" {
+    @return "vw";
+  } @else if $axis == "y" {
+    @return "vh";
+  } @else {
+    @return "";
+  }
+}
+
+@function ea-clamp(
+  $min-size,
+  $max-size,
+  $min-resolution,
+  $max-resolution,
+  $axis: "x"
+) {
+  $x: 
+    (
+      ea-unit($min-resolution) * ea-unit($max-size) - ea-unit($max-resolution) *
+        ea-unit($min-size)
+    ) /
+    (ea-unit($min-resolution) - ea-unit($max-resolution)
+  );
+  $v: 
+    (ea-unit($max-size) - ea-unit($min-size)) * 100 /
+    (ea-unit($max-resolution) - ea-unit($min-resolution))
+  ;
+
+  @return unquote(
+    "clamp(#{ea-unit($min-size)}px, #{$x}px + #{$v}#{ea-view-units($axis)}, #{ea-unit($max-size)}px)"
+  );
+}

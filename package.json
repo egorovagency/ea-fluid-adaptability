@@ -1,0 +1,26 @@
+{
+  "name": "@e2agency/ea-fluid-adaptability",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/scss/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egorovagency/ea-fluid-adaptability.git"
+  },
+  "keywords": [
+    "sass",
+    "scss",
+    "fluid",
+    "typography",
+    "e2agency"
+  ],
+  "peerDependencies": {
+    "sass": "^1.0.0"
+  },
+  "author": "Egorov Agency",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/egorovagency/ea-fluid-adaptability/issues"
+  },
+  "homepage": "https://github.com/egorovagency/ea-fluid-adaptability#readme"
+}
