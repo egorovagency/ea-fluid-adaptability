@@ -1,2 +1,7 @@
 @import "./variables";
 @import "./functions";
+
+:root {
+  --ea-font-size: #{ea-clamp(8, $ea-base-size, 500, 1000)};
+  --ea-font-size-two: #{ea-clamp(8, $ea-base-size, 1000, 500)};
+}
