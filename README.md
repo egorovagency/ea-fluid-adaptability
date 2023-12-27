@@ -4,6 +4,10 @@
 
 The `@e2agency/ea-fluid-adaptability` package provides a set of SCSS mixins and functions for easy handling of adaptive font and element size changes on a web page.
 
+## Examples
+
+- [CodePen](https://codepen.io/alexi600/pen/abXrWrW)
+
 ## Installation
 
 Install the package using npm:
@@ -17,7 +21,7 @@ npm install @e2agency/ea-fluid-adaptability
 Import the package into your SCSS files:
 
 ```scss
-@use "@e2agency/ea-fluid-adaptability";
+@use "@e2agency/ea-fluid-adaptability" as *;
 ```
 
 ## Usage
