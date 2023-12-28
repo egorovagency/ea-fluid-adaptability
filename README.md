@@ -6,7 +6,9 @@ The `@e2agency/ea-fluid-adaptability` package provides a set of SCSS mixins and 
 
 ## Examples
 
-- [CodePen](https://codepen.io/dowellkin/pen/MWxYNBa)
+- Basic usage
+  - [CodePen](https://codepen.io/dowellkin/pen/MWxYNBa)
+  - [StackBlitz](https://stackblitz.com/edit/js-xguxsw?file=scss%2Fdemo.scss)
 
 ## Installation
 
