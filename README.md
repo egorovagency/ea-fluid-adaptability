@@ -4,6 +4,10 @@
 
 The `@e2agency/ea-fluid-adaptability` package provides a set of SCSS mixins and functions for easy handling of adaptive font and element size changes on a web page.
 
+## Docs
+
+You can find the full and detailed documentation [here](https://egorovagency.notion.site/ea-fluid-adaptability-en-030062c7043647d2af6afca3cd9a1eb3).
+
 ## Examples
 
 - Basic usage
@@ -20,52 +24,55 @@ npm install @e2agency/ea-fluid-adaptability
 
 ## Usage
 
-Import the package into your SCSS files:
+1. Import the package into your SCSS files:
 
 ```scss
 @use "@e2agency/ea-fluid-adaptability" as *;
 ```
-
-## Sizes in rem
-
-Use the ea-rem and ea-rem-max functions for working with sizes in rem:
+2. Set `font-size` to html using `ea-clamp()`:
 
 ```scss
-$my-size: ea-rem(20px); // Convert 20px to rem
-$max-size: ea-rem-max(30px); // Convert 30px to rem and add the max() function
+html {
+  font-size: ea-clamp(10, 16, 1200, 1920); // clamp(10px, 0px + 0.8333333333vw, 16px)
+}
 ```
 
-For full fluid of that variables you should set `font-size` to html tag with clamp function like that:
+2. Define container size using `ea-clamp()`:
 
 ```scss
-font-size: ea-clamp(8, $ea-base-size, 500, 1000) // $ea-base-size is 16 by default
+.container {
+  max-width: ea-clamp(320, 1680, 360, 1920); // clamp(320px, 6.1538461538px + 87.1794871795vw, 1680px)
+}
 ```
 
-Or keep you html font size same as `$ea-base-size` variable. To change it use `@import` instead of `@use`:
+4. Use the `ea-rem` and `ea-rem-max` functions for working with sizes in rem:
+
 ```scss
-$ea-base-size: 10px;
-@import '@e2agency/ea-fluid-adaptability/';
+body {
+  font-size: ea-rem-max(16); // max(1rem, 14px)
+}
+
+.section {
+  padding: ea-rem(80) 0; // 5rem 0
+}
 ```
 
 ## Relative sizes
 
-Use the ea-rel and ea-rel-max functions for working with relative sizes:
-
-You must create variable `--ea-font-size` to make it work properly, or pass variable name as second argument.
+Define css-variable `--ea-font-size` using `ea-clamp()` and use the `ea-rem` and `ea-rem-max` functions for working with relative sizes:
 
 ```scss
---ea-font-size: #{ea-clamp(8, 16, 500, 1000)};
+:root {
+  --ea-font-size: #{ea-clamp(10.7, 16, 1280, 1920)}; // clamp(10.7px, 0.1px + 0.828125vw, 16px)
+}
 
-$rel-size: ea-rel(18px); // Size relative to the base size
-$max-rel-size: ea-rel-max(25px); // Relative size with the addition of the max() function
-```
+body {
+  font-size: ea-rel-max(16); // max(calc(16 * var(--ea-font-size, 16px) / 16), 14px)
+}
 
-## Clamp function
-
-Use the ea-clamp function to create a CSS clamp function with adaptive sizes:
-
-```scss
-$adaptive-size: ea-clamp(10px, 30px, 500, 1000, "x"); // Create an adaptive size with clamp()
+.section {
+  padding: ea-rel(80) 0; // calc(80 * var(--ea-font-size, 16px) / 16) 0
+}
 ```
 
 ## API

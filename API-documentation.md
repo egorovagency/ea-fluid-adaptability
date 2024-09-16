@@ -22,13 +22,13 @@ Generates a `calc()` function for a size relative to a specified base size varia
 
 Generates a `max()` function for a size relative to a specified base size variable and minimum size.
 
-### `ea-view-units($axis)`
+### `ea-clamp($min-size, $max-size, $min-resolution, $max-resolution, $units: "vw")`
 
-Returns the appropriate viewport units ("vw" for X-axis, "vh" for Y-axis).
+Generates a `clamp()` function with adaptive sizes based on minimum and maximum sizes, minimum and maximum resolutions, and an optional units (vw, dvw, vh, dvh).
 
-### `ea-clamp($min-size, $max-size, $min-resolution, $max-resolution, $axis: "x")`
+### `ea-stretch($size, $resolution, $units: "vw")`
 
-Generates a `clamp()` function with adaptive sizes based on minimum and maximum sizes, minimum and maximum resolutions, and an optional axis.
+Generates a `calc()` function. The resulting value will change proportionally to the change in viewport size. With a viewport size of `$resolution`, the resulting value will be `size`.
 
 ## Usage
 
