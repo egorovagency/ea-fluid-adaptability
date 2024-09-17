@@ -11,8 +11,8 @@ You can find the full and detailed documentation [here](https://egorovagency.not
 ## Examples
 
 - Basic usage
-  - [CodePen](https://codepen.io/dowellkin/pen/MWxYNBa)
-  - [StackBlitz](https://stackblitz.com/edit/js-xguxsw?file=scss%2Fdemo.scss)
+  - [CodePen](https://codepen.io/alexi600/pen/PorvXYR)
+  - [StackBlitz](https://stackblitz.com/edit/vitejs-vite-tw2f1h?file=scss%2Fdemo.scss)
 
 ## Installation
 
